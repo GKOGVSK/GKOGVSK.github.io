@@ -37,6 +37,16 @@ body:not(.menu-open) .nav{border-bottom-color:#d9d3c866}
 .step{min-height:218px;padding:18px}
 .step h3{margin-top:24px}
 .offer-card{min-height:238px}
+
+/* Final alignment pass: one primary hero action and three equal service cards. */
+.hero-actions{justify-content:center}
+.hero-phone{min-width:220px}
+@media(min-width:681px){
+  .offer{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+  .offer-card{display:grid;grid-template-rows:auto auto 1fr;align-content:start;min-width:0;min-height:0;padding-inline:4px}
+  .offer-card>div{display:grid;grid-template-rows:38px minmax(74px,auto) 1fr;align-content:start}
+  .offer-card h3{margin:14px 0 10px}
+}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--orange);outline-offset:4px}
 @media(max-width:1100px){.steps{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:800px){#services{padding-top:60px}.analytics-callout{margin-top:20px}#works{padding-top:66px}.steps{grid-template-columns:1fr 1fr}}
