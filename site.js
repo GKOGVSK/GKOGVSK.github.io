@@ -24,9 +24,9 @@ const servicesDesc=document.querySelector('#services .section-desc');
 if(servicesTitle)servicesTitle.innerHTML='Сайт или сервис.<br><i>Под конкретную задачу.</i>';
 if(servicesDesc)servicesDesc.textContent='Определяю цель, проектирую структуру и довожу решение до запуска. Объём, стоимость и срок фиксируем до начала работы.';
 const offerCopy=[
-  'Лендинг для услуги, продукта или рекламы. Структура, текст, дизайн и мобильная версия — в одном проекте. Первый показ обычно через 1–2 дня после получения материалов.',
-  'Понятный сайт с услугами, преимуществами, кейсами и контактами. Каждый раздел ведёт посетителя к следующему действию и отвечает на конкретный вопрос.',
-  'Дашборд или рабочий сервис под процессы вашей компании. Собираю нужные показатели и сценарии в удобном интерфейсе без лишних отчётов.'
+  'Одностраничник, лендинг или сайт-карточка на 1–2 страницы. Структура, текст, индивидуальный дизайн и мобильная версия — в одном проекте.',
+  'Сайт для компании, магазина или специалиста любого направления. Услуги, преимущества, кейсы и контакты выстраиваются в понятный маршрут для клиента.',
+  'Сервис аналитики для селлеров, предпринимателей и магазинов любого направления. Показатели и сценарии настраиваются под реальные процессы бизнеса.'
 ];
 document.querySelectorAll('.offer-card p').forEach((item,index)=>{if(offerCopy[index])item.textContent=offerCopy[index]});
 
@@ -40,7 +40,7 @@ if(trustItems[3])trustItems[3].querySelector('span').textContent='Под ваш 
 const analyticsLabel=document.querySelector('.analytics-lead>span');
 if(analyticsLabel)analyticsLabel.textContent='Сервисы аналитики / бизнес любого направления';
 const analyticsDemo=document.querySelector('.analytics-actions a:first-child');
-if(analyticsDemo)analyticsDemo.textContent='Открыть демо сервиса ↗';
+if(analyticsDemo)analyticsDemo.textContent='Открыть безопасную демоверсию ↗';
 
 const steps=document.querySelector('.steps');
 if(steps)steps.innerHTML=`

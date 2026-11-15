@@ -14,8 +14,8 @@
 <link rel="icon" type="image/png" href="icon-180.png">
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="app.css">
-<script defer src="live.js?v=4"></script>
-<title>SellerFlow Analytics — аналитика маркетплейсов</title>
+<script defer src="demo.js"></script>
+<title>SellerFlow Demo — аналитика маркетплейсов</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap">
@@ -738,7 +738,7 @@ th[aria-sort] { color:var(--color-fg); }
 <div class="ts">
   <header class="ts-top" id="top">
     <div class="ts-brand">
-      <h1>SellerFlow Analytics</h1>
+      <h1>SellerFlow Demo</h1>
       <p class="ts-muted"><span class="ts-mp ts-mp-wb">Wildberries</span><span class="ts-mp ts-mp-oz">Ozon</span><span class="ts-mp ts-mp-ym">Яндекс Маркет</span> <span data-draw="hdr-dates" data-source="sales">данные Торгстат</span></p>
     </div>
   </header>
@@ -892,7 +892,7 @@ th[aria-sort] { color:var(--color-fg); }
   </section>
 
   <section class="ts-page" id="stock" role="tabpanel" hidden>
-    <p class="ts-muted" data-draw="stk-note" data-source="sales">Остатки WB и Ozon из API площадок.</p>
+    <p class="ts-muted" data-draw="stk-note" data-source="sales">Остатки WB и Ozon из демонстрационного набора.</p>
     <div class="ts-kpis" data-draw="stk-kpis" data-source="sales"></div>
     <div class="ts-grid2">
       <div class="ts-sec"><h3>Скоро закончится</h3><div class="ts-xlist" data-draw="stk-list" data-k="low" data-source="sales"></div></div>
@@ -914,7 +914,7 @@ th[aria-sort] { color:var(--color-fg); }
       <button type="button" role="tab" data-sub="growth" aria-selected="false">Рост и падение</button>
       <button type="button" role="tab" data-sub="all" aria-selected="false">Все товары</button>
       <button type="button" role="tab" data-sub="cats" aria-selected="false">Категории</button>
-      <button type="button" role="tab" data-sub="abc" aria-selected="false">ABC и вывод</button>
+      <button type="button" role="tab" data-sub="abc" aria-selected="false">Nordly и вывод</button>
     </div>
     <div class="ts-subpage" id="best" hidden>
       <p class="ts-muted">8 товаров с наибольшей чистой прибылью за период.</p>
@@ -1013,7 +1013,7 @@ th[aria-sort] { color:var(--color-fg); }
       <li>Сравнение: для «N дней» берутся N дней перед ними, для месяца те же дни предыдущего месяца.</li>
       <li>Пороги: ДРР выше 15%, возвраты выше 10% (от 2 шт.), логистика выше 25% выручки, себестоимость выше 50%, хранение выше 5%, падение выручки больше 30%. Дешёвые товары: до 600 ₽, дорогие: от 2000 ₽.</li>
       <li>Кандидат на вывод: убыточный товар класса C или товар без продаж с расходами.</li>
-      <li>«Упущенная выручка» в выгрузке везде нулевая. Одинаковые бренды и категории с разным написанием («Бетпак» и «БЕТПАК», «Консервы мясные» и «Мясные консервы») объединены. У 10 товаров нет фото.</li>
+      <li>«Упущенная выручка» в выгрузке везде нулевая. Одинаковые бренды и категории с разным написанием («Arbor» и «VitaLine», «Консервы мясные» и «Мясные консервы») объединены. У 10 товаров нет фото.</li>
     </ul>
   </details>
 </div>
@@ -1108,7 +1108,7 @@ window.T = (function () {
     t.drr = t.rev ? -t.adv / t.rev : NaN;
     return t;
   }
-  // Same brand or category is spelled differently across stores: «Бетпак»/«БЕТПАК», «Консервы мясные»/«Мясные консервы»
+  // Same brand or category is spelled differently across stores: «Arbor»/«VitaLine», «Консервы мясные»/«Мясные консервы»
   function nb(s) { return String(s || '').toLowerCase().replace(/ё/g, 'е').replace(/\s+/g, ' ').trim(); }
   function nc(s) { return nb(s).split(' ').sort().join(' '); }
   function passDims(o, p) {
@@ -1238,7 +1238,7 @@ window.T = (function () {
   }
 
   /* Marketplace API data (market.json): stocks, funnel, reviews, prices, orders, ads, weekly payouts */
-  const SID = { wb1: { name: 'ВБ Саковский', mp: 'WB' }, wb2: { name: 'Дармил', mp: 'WB' }, oz1: { name: 'Озон Саковский', mp: 'Ozon' }, oz2: { name: 'Suaviss Озон', mp: 'Ozon' }, ym1: { name: 'Яндекс Саковский', mp: 'Яндекс' } };
+  const SID = { wb1: { name: 'Север Маркет', mp: 'WB' }, wb2: { name: 'Дом и уют', mp: 'WB' }, oz1: { name: 'Urban Care', mp: 'Ozon' }, oz2: { name: 'Лавка вкуса', mp: 'Ozon' }, ym1: { name: 'Маркет Плюс', mp: 'Яндекс' } };
   function mk() { const s = dash.data('market'); return s.status === 'ok' && s.data[0] ? s.data[0] : null; }
   const sidPass = (id, p) => { const s = SID[id]; return !!s && !(p.mp && s.mp !== p.mp) && !(p.store && s.name !== p.store); };
   let velC = { data: null, map: null };
@@ -2348,8 +2348,8 @@ dash.loader('sales', {
   }
   dash.draw('stk-note', (e) => {
     const M = T.mk();
-    if (!M) { e.textContent = 'Данные остатков появятся после выгрузки из API площадок.'; return; }
-    e.textContent = 'Остатки WB и Ozon из API площадок на ' + new Date(M.generated).toLocaleString('ru-RU', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Moscow' }) + '. Скорость продаж — среднее за последние 14 дней. Яндекс Маркет пока без остатков.';
+    if (!M) { e.textContent = 'Данные остатков появятся после выгрузки из демонстрационного набора.'; return; }
+    e.textContent = 'Остатки WB и Ozon из демонстрационного набора на ' + new Date(M.generated).toLocaleString('ru-RU', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Moscow' }) + '. Скорость продаж — среднее за последние 14 дней. Яндекс Маркет пока без остатков.';
   });
   dash.draw('stk-kpis', (e) => {
     const R = stockRows(); e.replaceChildren();
@@ -2582,7 +2582,7 @@ dash.loader('sales', {
   dash.draw('och-note', (e) => {
     const S = ordSeries();
     if (!S || !S.days.length) { e.textContent = ''; return; }
-    e.textContent = 'Заказы WB и Ozon — из API кабинетов по дате заказа, сумма по цене со скидкой продавца. Выкупы ' + (S.wbApi ? 'WB — из API кабинета (продажи по дате продажи), Ozon и Яндекс — из Торгстат.' : '— из Торгстат.') + ' Заказы Яндекс Маркета пока недоступны: его API не подключён.' + (S.dimF ? ' Фильтр бренда или категории к заказам не применяется.' : '') + ' Последний день неполный.';
+    e.textContent = 'Заказы WB и Ozon — из демонстрационных кабинетов по дате заказа, сумма по цене со скидкой продавца. Выкупы ' + (S.wbApi ? 'WB — из API кабинета (продажи по дате продажи), Ozon и Яндекс — из Торгстат.' : '— из Торгстат.') + ' Заказы Яндекс Маркета пока недоступны: источник не подключён в демоверсии.' + (S.dimF ? ' Фильтр бренда или категории к заказам не применяется.' : '') + ' Последний день неполный.';
   });
   dash.draw('och', (e) => {
     const S = ordSeries(); e.replaceChildren();
@@ -2717,7 +2717,7 @@ dash.loader('sales', {
   dash.draw('rk-note', (e) => {
     const M = T.mk();
     e.textContent = !M || !M.ads ? 'Данные рекламы появятся после выгрузки из API.' :
-      'Кампании WB за последние 30 дней (API рекламного кабинета). Маржа до рекламы — по товарам кампании за те же 30 дней из Торгстат, ДРР пересчитан с заказов на выкупы. Реклама Ozon пока не подключена (нужен ключ Performance API).';
+      'Кампании WB за последние 30 дней (демонстрационного рекламного кабинета). Маржа до рекламы — по товарам кампании за те же 30 дней из Торгстат, ДРР пересчитан с заказов на выкупы. Реклама Ozon пока не подключена (нужен ключ Performance API).';
   });
   dash.draw('rk-kpis', (e) => {
     const L = rkAudit(); e.replaceChildren();
@@ -2910,7 +2910,7 @@ dash.loader('sales', {
   dash.draw('growup', (box) => growList(box, true));
   dash.draw('growdown', (box) => growList(box, false));
 
-  /* ABC */
+  /* Nordly */
   dash.draw('abcstat', (e) => {
     const v = T.view(); if (!v) { e.textContent = '—'; return; }
     const [cls, f] = e.dataset.k.split(':');
