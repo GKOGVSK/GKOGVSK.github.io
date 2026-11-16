@@ -40,7 +40,7 @@ if(trustItems[3])trustItems[3].querySelector('span').textContent='Под ваш 
 const analyticsLabel=document.querySelector('.analytics-lead>span');
 if(analyticsLabel)analyticsLabel.textContent='Сервисы аналитики / бизнес любого направления';
 const analyticsDemo=document.querySelector('.analytics-actions a:first-child');
-if(analyticsDemo)analyticsDemo.textContent='Открыть безопасную демоверсию ↗';
+if(analyticsDemo)analyticsDemo.textContent='Открыть SellerFlow ↗';
 
 const steps=document.querySelector('.steps');
 if(steps)steps.innerHTML=`
