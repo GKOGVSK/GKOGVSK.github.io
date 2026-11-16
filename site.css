@@ -60,3 +60,16 @@ body{overflow-x:clip}.scribble{bottom:22%;cursor:pointer;transition:transform .2
   .contact:after{display:none}
   .mobile-arrow{display:none}
 }
+
+/* Clear service-card hierarchy: index, deadline, offer, explanation. */
+.offer-no{font-size:25px;line-height:1}
+.offer-tag{font-size:12px;line-height:1.2;padding:7px 11px;letter-spacing:.01em}
+.offer-card h3{font-size:28px;line-height:1.08}
+.offer-card p{font-size:15px;line-height:1.62}
+@media(min-width:681px){
+  .offer-card>div{grid-template-rows:42px minmax(78px,auto) 1fr}
+}
+@media(max-width:680px){
+  .offer-card h3{font-size:26px;margin-top:18px}
+  .offer-card p{font-size:14px}
+}
