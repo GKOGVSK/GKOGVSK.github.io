@@ -38,9 +38,9 @@ if(trustItems[2]){
 if(trustItems[3])trustItems[3].querySelector('span').textContent='Под ваш бизнес и показатели';
 
 const analyticsLabel=document.querySelector('.analytics-lead>span');
-if(analyticsLabel)analyticsLabel.textContent='Сервисы аналитики / бизнес любого направления';
+if(analyticsLabel)analyticsLabel.textContent='SellerFlow · WB · Ozon · Яндекс Маркет';
 const analyticsDemo=document.querySelector('.analytics-actions a:first-child');
-if(analyticsDemo)analyticsDemo.textContent='Открыть SellerFlow ↗';
+if(analyticsDemo)analyticsDemo.textContent='Открыть SellerFlow';
 
 const steps=document.querySelector('.steps');
 if(steps)steps.innerHTML=`
