@@ -55,3 +55,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 body{overflow-x:clip}.scribble{bottom:22%;cursor:pointer;transition:transform .2s,background .2s}.scribble:hover{background:#302d28;transform:rotate(-7deg) translateY(-3px)}
 @media(max-width:680px){.scribble{right:5%;bottom:20%;width:68px;height:68px;font-size:9px}.contact{overflow:hidden;padding:34px 20px}.contact:after{right:12px;top:14px;font-size:74px;line-height:1}.contact h2{max-width:100%;font-size:clamp(40px,12vw,52px);line-height:.94;overflow-wrap:anywhere}.contact-row{margin-top:22px}.contact p{font-size:14px;line-height:1.55}.contact-actions{gap:8px;margin-top:22px}.contact-actions .btn{min-width:0;max-width:100%;padding-inline:14px}.footer{overflow-wrap:anywhere}}
 @media(max-width:380px){.contact{padding:30px 17px}.contact h2{font-size:38px}.contact:after{font-size:58px}.contact-actions .btn{font-size:12px}}
+
+@media(max-width:680px){
+  .contact:after{display:none}
+  .mobile-arrow{display:none}
+}
